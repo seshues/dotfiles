@@ -1,0 +1,4 @@
+general {
+	interval = 1
+	colors = true
+}
