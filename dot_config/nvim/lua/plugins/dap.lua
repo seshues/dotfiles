@@ -4,6 +4,7 @@ return {
     'leoluz/nvim-dap-go',
     'rcarriga/nvim-dap-ui',
     'nvim-telescope/telescope-dap.nvim',
+    'nvim-neotest/nvim-nio',
   },
   config = function()
     require('dapui').setup()

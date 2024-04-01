@@ -5,12 +5,14 @@ bitwarden
 bitwarden-cli
 bumblebee-status
 chezmoi
+cmake
 code
 dconf-editor
 discord
 flameshot
 floorp-bin
 fzf
+gcc-multilib
 git
 gnome-themes-extra
 go
@@ -19,6 +21,7 @@ lazygit
 luarocks
 lxappearance
 mpv
+nasm
 neofetch
 neovim
 nodejs-lts-hydrogen

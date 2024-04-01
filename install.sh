@@ -57,7 +57,7 @@ cp ~/.config/alacritty/rose-pine/dist/rose-pine.toml ~/.config/alacritty/themes
 yes | rm -r ~/.config/alacritty/rose-pine
 
 git clone https://github.com/rose-pine/rofi ~/.config/rofi/rose-pine
-cp ~/.config/rofi/rose-pine.rasi ~/.config/rofi/
+cp ~/.config/rofi/rose-pine/rose-pine.rasi ~/.config/rofi/
 yes | rm -r ~/.config/rofi/rose-pine
 
 # open vconsole.conf to change layout

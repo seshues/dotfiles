@@ -2,6 +2,7 @@ local opt=vim.opt
 opt.number=true
 opt.relativenumber=true
 opt.signcolumn='yes'
+opt.fillchars={ eob = " " }
 
 opt.scrolloff=5
 opt.sidescrolloff=5
