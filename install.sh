@@ -53,7 +53,7 @@ setxkbmap -layout finner_ansi
 
 # git clone rose-pine for alacritty and rofi
 git clone https://github.com/rose-pine/alacritty.git ~/.config/alacritty/rose-pine
-cp ~/.config/alacritty/rose-pine/dist/rose-pine.toml ~/.config/alacritty/themes
+cp ~/.config/alacritty/rose-pine/dist/rose-pine.toml ~/.config/alacritty/themes/
 yes | rm -r ~/.config/alacritty/rose-pine
 
 git clone https://github.com/rose-pine/rofi ~/.config/rofi/rose-pine
