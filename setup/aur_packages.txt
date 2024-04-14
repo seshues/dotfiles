@@ -15,6 +15,7 @@ gcc-multilib
 git
 gnome-themes-extra
 go
+gtk-engine-murrine
 htop
 lazygit
 luarocks

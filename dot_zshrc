@@ -19,3 +19,4 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 eval "$(tmuxifier init -)"
+eval "$(starship init zsh)"

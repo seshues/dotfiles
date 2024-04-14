@@ -28,6 +28,9 @@ else
   echo ".oh-my-zsh already found, skipping."
 fi
 
+# install starship
+curl -sS https://starship.rs/install.sh | sh
+
 # get tpm and tmuxifier for tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/jimeh/tmuxifier ~/.tmuxifier
