@@ -28,6 +28,10 @@ else
   echo ".oh-my-zsh already found, skipping."
 fi
 
+# get tpm and tmuxifier for tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/jimeh/tmuxifier ~/.tmuxifier
+
 # install cargo
 if ! command -v cargo &> /dev/null; then
 	curl https://sh.rustup.rs -sSf | sh
@@ -59,6 +63,11 @@ yes | rm -r ~/.config/alacritty/rose-pine
 git clone https://github.com/rose-pine/rofi ~/.config/rofi/rose-pine
 cp ~/.config/rofi/rose-pine/rose-pine.rasi ~/.config/rofi/
 yes | rm -r ~/.config/rofi/rose-pine
+
+# install dark layan-gtk-theme
+git clone https://github.com/vinceliuice/Layan-gtk-theme
+Layan-gtk-theme/.install.sh -c dark
+yes | rm -r Layan-gtk-theme
 
 # open vconsole.conf to change layout
 sudo nvim /etc/vconsole.conf
