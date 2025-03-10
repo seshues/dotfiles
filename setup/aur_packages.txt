@@ -1,4 +1,3 @@
-alacritty
 bitwarden
 bitwarden-cli
 bumblebee-status
@@ -6,10 +5,9 @@ chezmoi
 cmake
 code
 dconf-editor
-discord
 elixir
+fastfetch
 flameshot
-floorp-bin
 fzf
 gcc-multilib
 git
@@ -17,12 +15,12 @@ gnome-themes-extra
 go
 gtk-engine-murrine
 htop
+kitty
 lazygit
 luarocks
 lxappearance
 mpv
 nasm
-neofetch
 neovim
 nodejs-lts-hydrogen
 npm
@@ -44,6 +42,8 @@ tmux
 ttf-font-awesome
 ttf-jetbrains-mono-nerd
 ungoogled-chromium-bin
+vesktop-bin
 yt-dlp
+zen-browser-bin
 zig
 zsh
