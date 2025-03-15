@@ -12,11 +12,11 @@ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/ya
 sudo vim /etc/pacman.conf
 sudo pacman -Syu
 
-# install packages
-yes | yay -S --needed --noconfirm --answerdiff=None --answerclean=None - <~/.local/share/chezmoi/setup/aur_packages.txt
-
 # initialise chezmoi
 chezmoi init github.com/seshues/dotfiles || error "Failed to init chezmoi"
+
+# install packages
+yes | yay -S --needed --noconfirm --answerdiff=None --answerclean=None - <~/.local/share/chezmoi/setup/aur_packages.txt
 
 # install ohmyzsh and plugins
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
