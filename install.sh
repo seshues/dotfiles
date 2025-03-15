@@ -50,18 +50,10 @@ cargo binstall bob-nvim
 bob install nightly
 bob use nightly
 
-# install vencord
-sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
-
 # install a slightly edited keymap
 sudo cp ~/.local/share/chezmoi/setup/keymap/finner_ansi /usr/share/X11/xkb/symbols/finner_ansi
 sudo cp ~/.local/share/chezmoi/setup/keymap/finner_ansi.map /usr/share/kbd/keymaps/i386/qwerty/finner_ansi.map
 setxkbmap -layout finner_ansi
-
-# git clone rose-pine for alacritty and rofi
-git clone https://github.com/rose-pine/alacritty.git ~/.config/alacritty/rose-pine
-cp ~/.config/alacritty/rose-pine/dist/rose-pine.toml ~/.config/alacritty/themes/
-yes | rm -r ~/.config/alacritty/rose-pine
 
 git clone https://github.com/rose-pine/rofi ~/.config/rofi/rose-pine
 cp ~/.config/rofi/rose-pine/rose-pine.rasi ~/.config/rofi/
