@@ -5,35 +5,18 @@ error() {
   exit 1
 }
 
-# install yay
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+# install chezmoi, git, yay and zsh
+sudo pacman -S --needed git base-devel chezmoi zsh && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
 
 # enable multilib for steam
 sudo vim /etc/pacman.conf
 sudo pacman -Syu
 
-# install packages
-yes | yay -S --needed --noconfirm --answerdiff=None --answerclean=None - <~/.local/share/chezmoi/setup/aur_packages.txt
-
 # initialise chezmoi
 chezmoi init github.com/seshues/dotfiles || error "Failed to init chezmoi"
 
-# install ohmyzsh and plugins
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  echo "Getting ohmyz.sh"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ""
-  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-else
-  echo ".oh-my-zsh already found, skipping."
-fi
-
 # install starship
 curl -sS https://starship.rs/install.sh | sh
-
-# get tpm and tmuxifier for tmux
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone https://github.com/jimeh/tmuxifier ~/.tmuxifier
 
 # install cargo
 if ! command -v cargo &> /dev/null; then
@@ -50,26 +33,19 @@ cargo binstall bob-nvim
 bob install nightly
 bob use nightly
 
-# install vencord
-sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
-
 # install a slightly edited keymap
 sudo cp ~/.local/share/chezmoi/setup/keymap/finner_ansi /usr/share/X11/xkb/symbols/finner_ansi
 sudo cp ~/.local/share/chezmoi/setup/keymap/finner_ansi.map /usr/share/kbd/keymaps/i386/qwerty/finner_ansi.map
 setxkbmap -layout finner_ansi
 
-# git clone rose-pine for alacritty and rofi
-git clone https://github.com/rose-pine/alacritty.git ~/.config/alacritty/rose-pine
-cp ~/.config/alacritty/rose-pine/dist/rose-pine.toml ~/.config/alacritty/themes/
-yes | rm -r ~/.config/alacritty/rose-pine
-
+# git clone rose-pine for rofi
 git clone https://github.com/rose-pine/rofi ~/.config/rofi/rose-pine
 cp ~/.config/rofi/rose-pine/rose-pine.rasi ~/.config/rofi/
 yes | rm -r ~/.config/rofi/rose-pine
 
 # install dark layan-gtk-theme
 git clone https://github.com/vinceliuice/Layan-gtk-theme
-Layan-gtk-theme/.install.sh -c dark
+./Layan-gtk-theme/install.sh -c dark
 yes | rm -r Layan-gtk-theme
 
 # open vconsole.conf to change layout
@@ -77,6 +53,35 @@ sudo nvim /etc/vconsole.conf
 
 # apply dotfiles with chezmoi
 chezmoi apply -R || error "Failed to apply dotfiles"
+
+# install packages
+yes | yay -S --needed --noconfirm --answerdiff=None --answerclean=None - <~/.local/share/chezmoi/setup/aur_packages.txt
+
+# get tpm and tmuxifier for tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/jimeh/tmuxifier ~/.tmuxifier
+
+# install ohmyzsh and plugins
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  echo "Getting ohmyz.sh"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ""
+else
+  echo ".oh-my-zsh already found, skipping."
+fi
+
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
+  echo "Getting zsh-autosuggestions"
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+else
+  echo "zsh-autosuggestions already present, skipping."
+fi
+
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
+  echo "Getting zsh-syntax-highlighting"
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+else
+  echo "zsh-syntax-highlighting already present, skipping."
+fi
 
 # set zsh as shell
 chsh -s /usr/bin/zsh
