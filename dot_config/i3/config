@@ -27,7 +27,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
@@ -117,19 +117,19 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-assign [class="floorp"] $ws1
+assign [class="zen"] $ws1
 assign [class="Chromium"] $ws1
-assign [class="Alacritty"] $ws2
+assign [class="kitty"] $ws2
 assign [class="obsidian"] $ws3
 assign [class="mpv"] $ws5
 assign [class="steam"] $ws6
 assign [class="Lutris"] $ws6
-#assign [class="discord"] $ws8
+assign [class="vesktop"] $ws8
 assign [class="TelegramDesktop"] $ws8
 assign [class="obs"] $ws9
 assign [class="Spotify"] $ws10
 
-bindsym $mod+w exec --no-startup-id floorp
+bindsym $mod+w exec --no-startup-id zen
 bindsym $mod+e exec --no-startup-id Thunar
 
 # restart i3
