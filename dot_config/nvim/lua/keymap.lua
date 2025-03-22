@@ -15,3 +15,5 @@ keymap.set('n', '<leader>rp', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Le
 keymap.set('n', '<C-a>', 'ggVG')
 
 keymap.set('n', '<leader>p', '"0p')
+
+keymap.set('n', '<leader>ll', ':setlocal spell spelllang=en_us<CR>')

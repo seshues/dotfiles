@@ -10,7 +10,6 @@ feh
 flameshot
 fzf
 gcc-multilib
-git
 gnome-themes-extra
 go
 gtk-engine-murrine
@@ -22,7 +21,7 @@ lxappearance
 mpv
 nasm
 neovim
-nodejs-lts-hydrogen
+nodejs-lts-iron
 npm
 obsidian
 obs-studio
@@ -46,4 +45,5 @@ vesktop-bin
 yazi
 yt-dlp
 zen-browser-bin
-zig
+zig-git
+zoxide

@@ -21,6 +21,10 @@ return {
         'isort',
         'rust_analyzer',
         'pylsp',
+        'clangd',
+        'gopls',
+        'zls',
+        'ocamllsp',
       },
     })
   end
