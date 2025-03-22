@@ -39,6 +39,7 @@ telegram-desktop
 thunar
 tmux
 ttf-font-awesome
+ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
 ungoogled-chromium-bin
 vesktop-bin

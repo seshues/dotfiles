@@ -38,10 +38,18 @@ sudo cp ~/.local/share/chezmoi/setup/keymap/finner_ansi /usr/share/X11/xkb/symbo
 sudo cp ~/.local/share/chezmoi/setup/keymap/finner_ansi.map /usr/share/kbd/keymaps/i386/qwerty/finner_ansi.map
 setxkbmap -layout finner_ansi
 
-# git clone rose-pine for rofi
+# git clone base16 and rose-pine for rofi
+git clone https://github.com/tinted-theming/base16-rofi.git ~/.config/rofi/base16-rofi
+cp ~/.config/rofi/base16-rofi/themes/base16-black-metal-gorgoroth.rasi ~/.config/rofi/
+cp ~/.config/rofi/base16-rofi/themes/base16-black-metal-gorgoroth.config ~/.config/rofi/
+yes | rm -r ~/.config/rofi/base16-rofi
+
 git clone https://github.com/rose-pine/rofi ~/.config/rofi/rose-pine
 cp ~/.config/rofi/rose-pine/rose-pine.rasi ~/.config/rofi/
 yes | rm -r ~/.config/rofi/rose-pine
+
+# get bash16 shell theme
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
 # install dark layan-gtk-theme
 git clone https://github.com/vinceliuice/Layan-gtk-theme

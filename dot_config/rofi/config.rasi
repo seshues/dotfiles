@@ -12,7 +12,8 @@
 	red: #b4637a;
 	yel: #ea9d34;
 
-	font: "JetBrainsMono Nerd Font 14";
+	/* font: "JetBrainsMono Nerd Font 14"; */
+	font: "Iosevka Nerd Font Mono 14";
 
 	foreground: @fgd;
 	background: @bg;
@@ -26,4 +27,4 @@
 	bordercolor: @ora;
 }
 
-@theme "rose-pine"
+@theme "base16-black-metal-gorgoroth"
