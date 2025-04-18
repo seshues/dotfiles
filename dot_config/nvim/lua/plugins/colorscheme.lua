@@ -1,4 +1,6 @@
 return {
+	{ 'ellisonleao/gruvbox.nvim', },
+	{ 'RRethy/base16-nvim', },
 	{
 		'rose-pine/neovim',
 		name = 'rose-pine',
@@ -8,14 +10,7 @@ return {
 					transparency = true,
 				},
 			})
-			vim.cmd.colorscheme 'rose-pine'
 		end,
-	},
-	{
-		'ellisonleao/gruvbox.nvim'
-	},
-	{
-		'RRethy/base16-nvim',
 	},
 	{
 		'vague2k/vague.nvim',

@@ -21,9 +21,9 @@ return {
           function()
             encoding = vim.o.fileencoding
             if encoding == '' then
-              return vim.bo.bileformat .. ' :: ' .. vim.bo.filetype
+              return vim.bo.bileformat .. '  ' .. vim.bo.filetype
             else
-              return encoding .. ' :: ' .. vim.bo.fileformat .. ' :: ' .. vim.bo.filetype
+              return encoding .. '  ' .. vim.bo.fileformat .. '  ' .. vim.bo.filetype
             end
           end,
         },

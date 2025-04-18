@@ -14,3 +14,5 @@ vim.opt.rtp:prepend(lazypath)
 require('opts')
 require('keymap')
 require('lazy').setup('plugins')
+
+vim.cmd('colorscheme base16-black-metal-gorgoroth')
